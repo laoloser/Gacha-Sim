@@ -33,9 +33,11 @@ function buttonClick() {
     }
 
     const imageNumber = rarity === "2" ? "1" : Math.floor(Math.random() * 3) + 1;
+    
+    const basePath = "https://laoloser.github.io/Gacha-Sim/";
 
-    const imagePath = `images/${unit}/${character}/${rarity}/${character}${rarity}${imageNumber}.png`;
-
+    const imagePath = `${basePath}images/${unit}/${character}/${rarity}/${character}${rarity}${imageNumber}.png`;
+    
     let result = `You pulled <strong>${rarity}★ ${character}</strong>!`;
     document.getElementById("popup-result").innerHTML = result;
     document.getElementById("popup-image").src = imagePath;

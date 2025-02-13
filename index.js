@@ -1,12 +1,12 @@
 document.getElementById("gacha-button").onclick = buttonClick;
 
 const units = {
-    "VS": ["Miku", "Rin", "Len", "Luka", "Meiko", "Kaito"],
-    "LN": ["Ichika", "Saki", "Honami", "Shiho"],
-    "MMJ": ["Minori", "Haruka", "Airi", "Shizuku"],
-    "VBS": ["Kohane", "An", "Akito", "Toya"],
-    "WXS": ["Tsukasa", "Emu", "Nene", "Rui"],
-    "N25": ["Kanade", "Mafuyu", "Ena", "Mizuki"]
+    "VS": ["miku", "rin", "len", "luka", "meiko", "kaito"],
+    "LN": ["ichika", "saki", "honami", "shiho"],
+    "MMJ": ["minori", "haruka", "airi", "shizuku"],
+    "VBS": ["kohane", "an", "akito", "toya"],
+    "WXS": ["tsukasa", "emu", "nene", "rui"],
+    "N25": ["kanade", "mafuyu", "ena", "mizuki"]
 };
 
 function getRandomItem(arr) {

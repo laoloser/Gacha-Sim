@@ -15,7 +15,6 @@ function getRandomItem(arr) {
 
 function buttonClick() {
     const unit = getRandomItem(Object.keys(units));
-
     const character = getRandomItem(units[unit]);
 
     const rarityRoll = Math.random();
@@ -35,9 +34,15 @@ function buttonClick() {
     const imageNumber = rarity === "2" ? "1" : Math.floor(Math.random() * 3) + 1;
     
     const basePath = "https://laoloser.github.io/Gacha-Sim/";
-
     const imagePath = `${basePath}images/${unit}/${character}/${rarity}/${character}${rarity}${imageNumber}.png`;
-    
+
+    let gemsSpent = localStorage.getItem("gems");
+    gemsSpent = gemsSpent ? parseInt(gemsSpent) : 0; 
+    gemsSpent += 300; 
+    localStorage.setItem("gems", gemsSpent); 
+
+    getGemsSpent(); 
+
     let result = `You pulled <strong>${rarity}★ ${character}</strong>!`;
     document.getElementById("popup-result").innerHTML = result;
     document.getElementById("popup-image").src = imagePath;
@@ -47,3 +52,13 @@ function buttonClick() {
 function closePopup() {
     document.getElementById("popup").style.display = "none";
 }
+
+function getGemsSpent() {
+    let gems = localStorage.getItem("gems");
+    gems = gems ? parseInt(gems) : 0;
+
+    let result = `You have spent ${gems} gems.`;
+    document.getElementById("gems-spent").innerHTML = result;
+}
+
+getGemsSpent();
